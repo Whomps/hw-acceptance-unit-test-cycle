@@ -14,7 +14,7 @@ module NavigationHelpers
     case page_name
 
     when /^the home\s?page$/
-      '/'
+      '/movies'		# Changing this due to some browsers not supporting redirection (original breaks cucumber test 16)
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
