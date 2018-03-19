@@ -64,8 +64,8 @@ class MoviesController < ApplicationController
   # Added by Derek for hw3 - used to find same director movies
   def find_same_director
     @movie = Movie.find(params[:id])
-	movie_director = @movie.director
-	if movie_director.empty? 
+	movie_director = @movie.director || []	# Initialize to blank if no director found
+	if movie_director.empty?
 	  flash[:notice] = "'#{@movie.title}' has no director info."
 	  redirect_to movies_path
 	else
